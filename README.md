@@ -1,7 +1,6 @@
 .vim
 ====
-
-My vim plugin and setup
+My vim setup and plugin(s).
 
 Install
 =======
