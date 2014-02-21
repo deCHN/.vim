@@ -1,5 +1,6 @@
-" Runtimes
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+" Runtimes - pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 set cursorline
 set encoding=utf-8
