@@ -87,16 +87,8 @@ let g:EclimLoggingDisabled = 1
 set statusline=%<%f\ %M\ %h%r%=%-10.(%l,%c%V\ %{eclim#project#util#ProjectStatusLine()}%)\ %P
 let g:EclimProjectStatusLine = 'p=${name}, n=${natures}'
 
-
-
-
-
-
-
-
-
 " Use semantic completers from Eclim for YouCompleteMe
-" let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimCompletionMethod = 'omnifunc'
 
 
 
