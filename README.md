@@ -4,12 +4,12 @@ My vim setup and plugin(s).
 
 Install
 =======
-cd ~
-git clone https://github.com/xnceth/.vim.git ~/.vim
-ln -s ~/.vim/.vimrc ~/.vimrc
-cd ~/.vim
-git submodule init
-git submodule update
+cd ~<br/>
+git clone https://github.com/xnceth/.vim.git ~/.vim<br/>
+ln -s ~/.vim/.vimrc ~/.vimrc<br/>
+cd ~/.vim<br/>
+git submodule init<br/>
+git submodule update<br/>
 
 Suitable vim version
 ====================
