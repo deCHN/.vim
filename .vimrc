@@ -1,3 +1,5 @@
+" Runtimes
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 set cursorline
 set encoding=utf-8
