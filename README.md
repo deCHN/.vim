@@ -8,8 +8,8 @@ cd ~<br/>
 git clone https://github.com/xnceth/.vim.git ~/.vim<br/>
 ln -s ~/.vim/.vimrc ~/.vimrc<br/>
 cd ~/.vim<br/>
-git submodule init<br/>
-git submodule update<br/>
+<br/>
+git submodule update --init --recursive<br/>
 
 Suitable vim version
 ====================
