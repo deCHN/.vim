@@ -46,6 +46,15 @@ nmap <S-Space> <C-u>
 nnoremap j jzz
 nnoremap k kzz
 
+" Automatically append closing characters
+" http://vim.wikia.com/wiki/Automatically_append_closing_characters
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O<Tab>
+inoremap {{     {
+inoremap {}     {}
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
 " Switch : and ;
 nnoremap ; :
 nnoremap : ;
