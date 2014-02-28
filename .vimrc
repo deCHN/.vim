@@ -1,6 +1,12 @@
-" Runtimes - pathogen
+filetype off
+filetype plugin indent off
+
+" Runtime - Pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+" Runtime - Golang
+set runtimepath+=/cygdrive/c/Go/misc/vim/ 
 
 set cursorline
 set encoding=utf-8
@@ -16,7 +22,6 @@ set showcmd
 set tabstop=3
 "set t_Co=256
 
-" Color scheme
 colorscheme xncSlate 
 
 " Editor encoding
@@ -26,19 +31,9 @@ let &termencoding=&encoding
 language messages en_US.utf-8
 
 " Editor font when running GUI
-if has('gui_running')
-  set guifont=Consolas:h9
-endif
-
-" Mappings to move lines
-" NOT WORKING: Issue of mapping ALT key under non-8bit terminal
-" http://vim.wikia.com/wiki/Get_Alt_key_to_work_in_terminal
-" nnoremap <A-j> :m .+1<CR>==
-" nnoremap <A-k> :m .-2<CR>==
-" inoremap <A-j> <Esc>:m .+1<CR>==gi
-" inoremap <A-k> <Esc>:m .-2<CR>==gi
-" vnoremap <A-j> :m '>+1<CR>gv=gv
-" vnoremap <A-k> :m '<-2<CR>gv=gv
+"if has('gui_running')
+  "set guifont=Consolas:h9
+"endif
 
 " Easy scrolling
 nmap <Space> <C-d>
@@ -59,6 +54,23 @@ inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")
 nnoremap ; :
 nnoremap : ;
 
+
+" ECLIM
+set runtimepath+=/cygdrive/c/Vim/vimfiles
+
+" Disable eclim logging plugin.
+let g:EclimLoggingDisabled = 1
+
+" Mapping F3 for eclim JavaSearchContext command
+autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>   
+
+" Echo info about the current or supplied project.
+set statusline=%<%f\ %M\ %h%r%=%-10.(%l,%c%V\ %{eclim#project#util#ProjectStatusLine()}%)\ %P
+let g:EclimProjectStatusLine = 'p=${name}, n=${natures}'
+
+" Use semantic completers from Eclim for YouCompleteMe
+let g:EclimCompletionMethod = 'omnifunc'
+
 " Mapptin CTRL-D/U with ALT-D/U
 " NOT WORKING: Issue of mapping ALT key under non-8bit terminal
 " http://vim.wikia.com/wiki/Get_Alt_key_to_work_in_terminal
@@ -69,31 +81,5 @@ nnoremap : ;
 " set <m-a>=^[a
 " map <m-a> ggVG
 
-" Runtime for Golang
-filetype off
-filetype plugin indent off
-set runtimepath+=/cygdrive/c/Go/misc/vim/,/cygdrive/c/Vim/vimfiles
 filetype plugin indent on
 syntax on
-
-" Mapping F3 for eclim JavaSearchContext command
-autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>   
-
-" ECLIM
-" Disable eclim logging plugin.
-let g:EclimLoggingDisabled = 1
-
-" Echo info about the current or supplied project.
-set statusline=%<%f\ %M\ %h%r%=%-10.(%l,%c%V\ %{eclim#project#util#ProjectStatusLine()}%)\ %P
-let g:EclimProjectStatusLine = 'p=${name}, n=${natures}'
-
-" Use semantic completers from Eclim for YouCompleteMe
-let g:EclimCompletionMethod = 'omnifunc'
-
-
-
-
-
-" ColorColumn to mark any line which widther than 80
-" highlight ColorColumn ctermbg=magenta
-" call matchadd('ColorColumn', '\%81v', 100)
