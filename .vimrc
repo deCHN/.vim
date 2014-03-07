@@ -81,5 +81,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 " set <m-a>=^[a
 " map <m-a> ggVG
 
+autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
+
 filetype plugin indent on
 syntax on
