@@ -59,3 +59,4 @@ let colors_name = "xncSlate"
 " My color definitions:
 :hi Pmenu ctermfg=5 ctermbg=0 guibg=DarkGrey
 :hi PmenuSel cterm=bold ctermfg=7 ctermbg=5 guibg=DarkMagenta
+:hi MatchParen cterm=bold ctermbg=0 ctermfg=5
