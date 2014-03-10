@@ -85,10 +85,12 @@ let g:EclimCompletionMethod = 'omnifunc'
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsSnippetsDir="~/.vim/snips"
+" let g:UltiSnipsSnippetDirectories=["snip"]
 let g:UltiSnipsExpandTrigger="<c-o>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsEditSplit="vertical"
 
 filetype plugin indent on
 syntax on
