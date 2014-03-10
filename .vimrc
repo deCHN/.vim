@@ -81,6 +81,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 " set <m-a>=^[a
 " map <m-a> ggVG
 
+" Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
 filetype plugin indent on
