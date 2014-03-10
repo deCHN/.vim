@@ -84,5 +84,11 @@ let g:EclimCompletionMethod = 'omnifunc'
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
+" Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsSnippetsDir="~/.vim/snips"
+let g:UltiSnipsExpandTrigger="<c-o>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 filetype plugin indent on
 syntax on
