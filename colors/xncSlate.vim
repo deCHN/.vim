@@ -43,7 +43,7 @@ let colors_name = "xncSlate"
 :hi Structure guifg=green ctermfg=green
 :hi LineNr guifg=grey50 ctermfg=3
 :hi Ignore guifg=grey40 cterm=bold ctermfg=7
-:hi Todo guifg=orangered guibg=yellow2
+:hi Todo guifg=orangered guibg=yellow2 ctermfg=1 ctermbg=0
 :hi Directory ctermfg=darkcyan
 :hi ErrorMsg cterm=bold guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
 :hi VisualNOS cterm=bold,underline
