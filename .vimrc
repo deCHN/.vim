@@ -30,6 +30,9 @@ let &termencoding=&encoding
 " Console encoding
 language messages en_US.utf-8
 
+" Easy <ESC>
+inoremap ;; <ESC>
+
 " Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
@@ -73,6 +76,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Mapping F3 for eclim JavaSearchContext command
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
+autocmd Filetype c nnoremap <F3> :YcmCompleter GoToDefinition<CR><ESC>
+autocmd Filetype c nnoremap <F4> :YcmCompleter GoToDeclaration<CR><ESC>
 
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
