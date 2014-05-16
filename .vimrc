@@ -22,6 +22,9 @@ set showcmd
 set tabstop=3
 set listchars=tab:>-,eol:¬
 
+" http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menu
+
 colorscheme xncSlate 
 
 " Editor encoding
@@ -45,6 +48,8 @@ inoremap ((     ()<Left>
 inoremap [[     []<left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap <C-J> <DOWN>
+inoremap <C-K> <UP>
 
 " Switch : and ;
 nnoremap ; :
@@ -68,23 +73,31 @@ nnoremap : ;
 
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsSnippetDirectories=["snip"]
-let g:UltiSnipsExpandTrigger="<c-o>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsListSnippets="<c-l>"
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsExpandTrigger="<c-o>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsListSnippets="<c-l>"
+" let g:UltiSnipsEditSplit="vertical"
+let g:ycm_error_symbol="!"
+let g:ycm_warning_symbol="?"
+let g:ycm_key_invoke_completion="<F11>"
+let g:ycm_key_list_select_completion=["<TAB>", "<DOWN>"]
+let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
-" Mapping F3 for eclim JavaSearchContext command
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
 autocmd Filetype c nnoremap <F3> :YcmCompleter GoToDefinition<CR><ESC>
 autocmd Filetype c nnoremap <F4> :YcmCompleter GoToDeclaration<CR><ESC>
+autocmd Filetype c nnoremap <F5> :YcmForceCompileAndDiagnostics<CR><ESC>
 
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
+" Turn off the preview window after inserting.
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif 
+
 " Identify the syntax highlighting group used at the cursor.
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 filetype plugin indent on
 syntax on
