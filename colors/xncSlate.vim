@@ -21,7 +21,7 @@ let colors_name = "xncSlate"
 :hi MoreMsg guifg=SeaGreen ctermfg=darkgreen
 :hi NonText guifg=RoyalBlue guibg=grey15 cterm=bold ctermfg=blue
 :hi Question guifg=springgreen ctermfg=green
-:hi Search guibg=peru guifg=wheat cterm=none ctermfg=grey ctermbg=blue
+:hi Search guibg=peru guifg=wheat cterm=none ctermfg=black ctermbg=blue
 :hi SpecialKey guifg=yellowgreen ctermfg=darkgreen
 :hi StatusLine guibg=#c2bfa5 guifg=black gui=none cterm=none ctermbg=4
 :hi StatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
@@ -60,3 +60,9 @@ let colors_name = "xncSlate"
 :hi Pmenu ctermfg=5 ctermbg=0 guibg=DarkGrey
 :hi PmenuSel cterm=bold ctermfg=7 ctermbg=5 guibg=DarkMagenta
 :hi MatchParen cterm=bold ctermbg=0 ctermfg=5
+:hi SpellBad ctermfg=7
+:hi StatusLine ctermfg=7
+:hi link YcmErrorSign Exception
+:hi link YcmWarningSign Exception
+:hi link YcmErrorSection Statement
+:hi link YcmWarningLine Statement

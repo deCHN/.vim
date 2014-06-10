@@ -6,7 +6,7 @@ runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Runtime - Golang
-set runtimepath+=/cygdrive/c/Go/misc/vim/ 
+" set runtimepath+=/cygdrive/c/Go/misc/vim/ 
 
 set cursorline
 set encoding=utf-8
@@ -23,7 +23,7 @@ set tabstop=3
 set listchars=tab:>-,eol:¬
 
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menu
+" set completeopt=longest,menu
 
 colorscheme xncSlate 
 
@@ -85,9 +85,11 @@ let g:ycm_key_list_select_completion=["<TAB>", "<DOWN>"]
 let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
+autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F3> :YcmCompleter GoToDefinition<CR><ESC>
 autocmd Filetype c nnoremap <F4> :YcmCompleter GoToDeclaration<CR><ESC>
 autocmd Filetype c nnoremap <F5> :YcmForceCompileAndDiagnostics<CR><ESC>
+autocmd Filetype c nnoremap <F6> :w<BAR>:make test<CR>
 
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
@@ -97,7 +99,8 @@ autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
 " Identify the syntax highlighting group used at the cursor.
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
-map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+noremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 
 filetype plugin indent on
 syntax on
