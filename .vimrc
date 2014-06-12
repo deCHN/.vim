@@ -55,6 +55,14 @@ inoremap <C-K> <UP>
 nnoremap ; :
 nnoremap : ;
 
+" Clear last search highlighting
+" http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
+" nnoremap <Esc> :noh<CR><CR><Esc>
+
+" Identify the syntax highlighting group used at the cursor.
+" http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+nnoremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " Echo info about the current or supplied project.
 " set statusline=%<%f\ %M\ %h%r%=%-10.(%l,%c%V\ %{eclim#project#util#ProjectStatusLine()}%)\ %P
 
@@ -86,8 +94,8 @@ let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
-autocmd Filetype c nnoremap <F3> :YcmCompleter GoToDefinition<CR><ESC>
-autocmd Filetype c nnoremap <F4> :YcmCompleter GoToDeclaration<CR><ESC>
+autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR><ESC><ESC>
+autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F5> :YcmForceCompileAndDiagnostics<CR><ESC>
 autocmd Filetype c nnoremap <F6> :w<BAR>:make test<CR>
 
@@ -96,11 +104,6 @@ autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
 
 " Turn off the preview window after inserting.
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif 
-
-" Identify the syntax highlighting group used at the cursor.
-" http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
-noremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
 
 filetype plugin indent on
 syntax on
