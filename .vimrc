@@ -36,6 +36,9 @@ language messages en_US.utf-8
 " Easy <ESC>
 inoremap ;; <ESC>
 
+" The following command maps ',b' to display the buffer list and invoke the ':buffer' command. You can enter the desired buffer number and hit <Enter> to edit the buffer.
+nnoremap ,b :ls<CR>:buffer<Space>
+
 " Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
@@ -48,8 +51,8 @@ inoremap ((     ()<Left>
 inoremap [[     []<left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-inoremap <C-J> <DOWN>
-inoremap <C-K> <UP>
+"inoremap <C-J> <DOWN>
+"inoremap <C-K> <UP>
 
 " Switch : and ;
 nnoremap ; :
@@ -79,13 +82,20 @@ nnoremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 " let g:EclimCompletionMethod = 'omnifunc'
 " } ECLIM
 
+" Search for the keyword under the cursor in the current directory using the 'grep' command:
+nnoremap <F7> :grep <C-R><C-W> *<CR>
+
+" Inactivated key mapping.
+" map! <F3> a<C-R>=strftime('%c')<CR><Esc>
+
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsSnippetDirectories=["snip"]
-" let g:UltiSnipsExpandTrigger="<c-o>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" let g:UltiSnipsListSnippets="<c-l>"
-" let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+let g:UltiSnipsListSnippets="<C-L>"
+"let g:UltiSnipsExpandTrigger="<C-CR>"
+let g:UltiSnipsEditSplit="vertical"
+
 let g:ycm_error_symbol="!"
 let g:ycm_warning_symbol="?"
 let g:ycm_key_invoke_completion="<F11>"
@@ -96,7 +106,7 @@ autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
-autocmd Filetype c nnoremap <F5> :YcmForceCompileAndDiagnostics<CR><ESC>
+autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
 autocmd Filetype c nnoremap <F6> :w<BAR>:make test<CR>
 
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
