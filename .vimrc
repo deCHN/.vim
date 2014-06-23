@@ -34,7 +34,7 @@ let &termencoding=&encoding
 language messages en_US.utf-8
 
 " Easy <ESC>
-inoremap ;; <ESC>
+"inoremap ;; <ESC>
 
 " The following command maps ',b' to display the buffer list and invoke the ':buffer' command. You can enter the desired buffer number and hit <Enter> to edit the buffer.
 nnoremap ,b :ls<CR>:buffer<Space>
