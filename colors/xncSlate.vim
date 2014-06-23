@@ -41,7 +41,6 @@ let colors_name = "xncSlate"
 :hi Type guifg=CornflowerBlue ctermfg=2
 :hi Function guifg=navajowhite ctermfg=brown
 :hi Structure guifg=green ctermfg=green
-:hi LineNr guifg=grey50 ctermfg=3
 :hi Ignore guifg=grey40 cterm=bold ctermfg=7
 :hi Todo guifg=orangered guibg=yellow2 ctermfg=1 ctermbg=0
 :hi Directory ctermfg=darkcyan
@@ -57,6 +56,7 @@ let colors_name = "xncSlate"
 :hi SpellErrors guifg=White guibg=Red cterm=bold ctermfg=7 ctermbg=1
 
 " My color definitions:
+:hi LineNr ctermfg=10
 :hi MatchParen cterm=bold ctermbg=0 ctermfg=5
 :hi Pmenu ctermfg=5 ctermbg=0 guibg=DarkGrey
 :hi PmenuSel cterm=bold ctermfg=7 ctermbg=5 guibg=DarkMagenta
