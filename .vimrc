@@ -16,9 +16,11 @@ set ic
 set incsearch
 set laststatus=2
 set nocompatible
+set number
 set ruler
 set shiftwidth=3
 set showcmd
+set splitright
 set tabstop=3
 set listchars=tab:>-,eol:¬
 
@@ -34,12 +36,10 @@ let &termencoding=&encoding
 language messages en_US.utf-8
 
 " Easy <ESC>
-"inoremap ;; <ESC>
+"noremap <C-]> <ESC>
 
 " The following command maps ',b' to display the buffer list and invoke the ':buffer' command. You can enter the desired buffer number and hit <Enter> to edit the buffer.
-nnoremap ,b :ls<CR>:buffer<Space>
-
-" Easy scrolling
+nnoremap ,b :ls<CR>:buffer<Space> " Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
 
@@ -62,9 +62,6 @@ nnoremap : ;
 " http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
 " nnoremap <Esc> :noh<CR><CR><Esc>
 
-" Identify the syntax highlighting group used at the cursor.
-" http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
-nnoremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Echo info about the current or supplied project.
 " set statusline=%<%f\ %M\ %h%r%=%-10.(%l,%c%V\ %{eclim#project#util#ProjectStatusLine()}%)\ %P
@@ -108,6 +105,12 @@ autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR>
 autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
 autocmd Filetype c nnoremap <F6> :w<BAR>:make test<CR>
+
+noremap <F10> :vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
+
+" Identify the syntax highlighting group used at the cursor.
+" http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+nnoremap <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Enable the C reference within editor. Requires 'CRefVim' plugin.
 autocmd BufNewFile, BufRead *.c helptags ~/.vim/bundle/CRefVim/doc
