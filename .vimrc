@@ -104,7 +104,7 @@ autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
-autocmd Filetype c nnoremap <F6> :w<BAR>:make test<CR>
+autocmd Filetype c nnoremap <F6> :w<BAR>:!gcc % && ./a.out<CR>
 
 noremap <F10> :vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
 
