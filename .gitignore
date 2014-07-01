@@ -28,4 +28,6 @@
 # Vim swap file
 *.swp
 
+# Ignore all plugins
 bundle/
+bundle/*
