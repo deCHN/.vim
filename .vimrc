@@ -80,7 +80,7 @@ nnoremap : ;
 " } ECLIM
 
 " Search for the keyword under the cursor in the current directory using the 'grep' command:
-nnoremap <F7> :grep <C-R><C-W> *<CR>
+nnoremap <F8> :grep <C-R><C-W> *<CR>
 
 " Inactivated key mapping.
 " map! <F3> a<C-R>=strftime('%c')<CR><Esc>
@@ -104,7 +104,10 @@ autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
+" Save the source code, compile it and run it.
 autocmd Filetype c nnoremap <F6> :w<BAR>:!gcc % && ./a.out<CR>
+" Check the memory leak of the programm 'a.out' under the current directory.
+autocmd Filetype c nnoremap <F7> :w<BAR>:!valgrind --leak-check=full ./a.out<CR>
 
 noremap <F10> :se noscb<CR>:vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
 
