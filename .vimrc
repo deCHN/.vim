@@ -42,6 +42,8 @@ language messages en_US.utf-8
 nnoremap ,b :ls<CR>:buffer<Space> " Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
+nmap <C-D> jjjjjjjjjjjjjjj
+nmap <C-U> kkkkkkkkkkkkkkk
 
 " Automatically append closing characters
 " [http://vim.wikia.com/wiki/Automatically_append_closing_characters]
@@ -83,7 +85,7 @@ nnoremap : ;
 nnoremap <F8> :grep <C-R><C-W> *<CR>
 
 " Inactivated key mapping.
-" map! <F3> a<C-R>=strftime('%c')<CR><Esc>
+"inoremap! <F11> a<C-R>=strftime('%c')<CR><Esc>
 
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsSnippetDirectories=["snip"]
