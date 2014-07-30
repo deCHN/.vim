@@ -65,6 +65,9 @@ let colors_name = "xncSlate"
 :hi StatusLine ctermfg=7
 
 :hi link YcmErrorSign Exception
+:hi link YcmErrorSection SpellBad
 :hi link YcmWarningSign Exception
-:hi link YcmErrorSection Statement
 :hi link YcmWarningLine Statement
+:hi link YcmWarningSection Conceal
+:hi link cBlock cType
+:hi link cParen cType
