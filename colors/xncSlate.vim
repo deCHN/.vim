@@ -71,3 +71,5 @@ let colors_name = "xncSlate"
 :hi link YcmWarningSection Conceal
 :hi link cBlock cType
 :hi link cParen cType
+:hi link makeCommands Statement
+:hi link makeTarget StatusLine
