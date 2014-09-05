@@ -88,19 +88,19 @@ nnoremap <F9> :grep <C-R><C-W> *<CR>
 "inoremap! <F11> a<C-R>=strftime('%c')<CR><Esc>
 
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsSnippetDirectories=["snip"]
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-let g:UltiSnipsListSnippets="<C-L>"
-"let g:UltiSnipsExpandTrigger="<C-CR>"
+let g:UltiSnipsSnippetDirectories=["xncSnips", "UltiSnips"]
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<c-;>"
+let g:UltiSnipsListSnippets="<c-l>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:ycm_error_symbol="!"
 let g:ycm_warning_symbol="?"
 let g:ycm_confirm_extra_conf=0
 let g:ycm_key_invoke_completion="<F11>"
-let g:ycm_key_list_select_completion=["<TAB>", "<DOWN>"]
-let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
+"let g:ycm_key_list_select_completion=["<TAB>", "<DOWN>"]
+"let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
