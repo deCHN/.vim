@@ -91,8 +91,8 @@ nnoremap <F9> :grep <C-R><C-W> *<CR>
 let g:UltiSnipsSnippetDirectories=["xncSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsExpandTrigger="<c-;>"
-let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsListSnippets="<c-m>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:ycm_error_symbol="!"
