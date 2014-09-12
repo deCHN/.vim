@@ -63,6 +63,7 @@ let colors_name = "xncSlate"
 :hi SignColumn ctermbg=none
 :hi SpellBad ctermfg=7
 :hi StatusLine ctermfg=7
+:hi makeTarget ctermfg=2
 
 :hi link YcmErrorSign Exception
 :hi link YcmErrorSection SpellBad
@@ -72,4 +73,3 @@ let colors_name = "xncSlate"
 :hi link cBlock cType
 :hi link cParen cType
 :hi link makeCommands Statement
-:hi link makeTarget StatusLine
