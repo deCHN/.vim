@@ -60,6 +60,9 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 nnoremap ; :
 nnoremap : ;
 
+" Search for visually selected text
+vnorem // y/<c-r>"<cr>
+
 " Clear last search highlighting
 " http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
 " nnoremap <Esc> :noh<CR><CR><Esc>
