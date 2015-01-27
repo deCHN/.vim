@@ -11,12 +11,15 @@ execute pathogen#infect()
 set cursorline
 set encoding=utf-8
 set expandtab
+"set foldcolumn=1
+set foldclose=all
+"set foldmethod=indent
 set hlsearch
 set ic
 set incsearch
 set laststatus=2
 set nocompatible
-set number
+"set number
 set ruler
 set shiftwidth=3
 set showcmd
@@ -42,19 +45,20 @@ language messages en_US.utf-8
 nnoremap ,b :ls<CR>:buffer<Space> " Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
-nmap <C-D> jjjjjjjjjjjjjjj
-nmap <C-U> kkkkkkkkkkkkkkk
+nmap <C-J> jjjjjjjjjjjjjjj
+nmap <C-K> kkkkkkkkkkkkkkk
 
 " Automatically append closing characters
 " [http://vim.wikia.com/wiki/Automatically_append_closing_characters]
-inoremap {{     {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O<Tab>
-inoremap ((     ()<Left>
-inoremap [[     []<left>
+"inoremap {{     {}<Left>
+"inoremap ((     ()<Left>
+"inoremap [[     []<left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-"inoremap <C-J> <DOWN>
-"inoremap <C-K> <UP>
+inoremap <C-H> <LEFT>
+"Conflict with UltiSnipsExpandTrigger.
+inoremap <C-L> <RIGHT>
 
 " Switch : and ;
 nnoremap ; :
@@ -85,7 +89,7 @@ vnorem // y/<c-r>"<cr>
 " } ECLIM
 
 " Search for the keyword under the cursor in the current directory using the 'grep' command:
-nnoremap <F9> :grep <C-R><C-W> *<CR>
+" nnoremap <F9> :grep <C-R><C-W> *<CR>
 
 " Inactivated key mapping.
 "inoremap! <F11> a<C-R>=strftime('%c')<CR><Esc>
@@ -94,7 +98,8 @@ nnoremap <F9> :grep <C-R><C-W> *<CR>
 let g:UltiSnipsSnippetDirectories=["xncSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsExpandTrigger="<c-l>"
+" Conflict with iomap <RIGHT>."
+"let g:UltiSnipsExpandTrigger="<c-l>"
 "let g:UltiSnipsListSnippets="<c-m>"
 let g:UltiSnipsEditSplit="vertical"
 
@@ -106,6 +111,10 @@ let g:ycm_key_invoke_completion="<F11>"
 "let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
+
+autocmd Filetype go nnoremap <F6> :GoRun %<CR>
+
+autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F3> :botright vs \| YcmCompleter GoToDefinition<CR><ESC><ESC>
 autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR><ESC><ESC>
@@ -115,6 +124,7 @@ autocmd Filetype c nnoremap <F6> :w<BAR>:!gcc -fdump-rtl-expand % -o vimF6.out -
 autocmd Filetype c nnoremap <F7> :!egypt %.150r.expand \| dot -Tsvg -o ~/Dropbox/%.svg<CR>
 " Check the memory leak of the programm 'a.out' under the current directory.
 autocmd Filetype c nnoremap <F8> :w<BAR>:!valgrind --leak-check=full ./a.out<CR>
+autocmd Filetype c nnoremap <F9> :make deploy<CR>
 
 noremap <F10> :se noscb<CR>:vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
 
