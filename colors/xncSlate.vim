@@ -64,6 +64,9 @@ let colors_name = "xncSlate"
 :hi SpellBad ctermfg=7
 :hi StatusLine ctermfg=7
 :hi makeTarget ctermfg=2
+:hi cComment ctermfg=5
+:hi cInclude ctermfg=4
+:hi cTodo ctermfg=7
 
 :hi link YcmErrorSign Exception
 :hi link YcmErrorSection SpellBad
