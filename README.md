@@ -9,7 +9,7 @@ git clone https://github.com/xnceth/.vim.git ~/.vim<br/>
 ln -s ~/.vim/.vimrc ~/.vimrc<br/>
 cd ~/.vim<br/>
 <br/>
-git submodule foreach --recursive update --init<br/>
+git submodule update --init --recursive<br/>
 
 Suitable vim version
 ====================
