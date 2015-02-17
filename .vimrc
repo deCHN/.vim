@@ -99,7 +99,7 @@ let g:UltiSnipsSnippetDirectories=["xncSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " Conflict with iomap <RIGHT>."
-"let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsExpandTrigger="<c-l>"
 "let g:UltiSnipsListSnippets="<c-m>"
 let g:UltiSnipsEditSplit="vertical"
 
@@ -121,7 +121,7 @@ autocmd Filetype c nnoremap <F4> :botright vs \| YcmCompleter GoToDeclaration<CR
 autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
 " Save the source code, compile it and run it.
 autocmd Filetype c nnoremap <F6> :w<BAR>:!gcc -fdump-rtl-expand % -o vimF6.out -g -Wall -O0 && ./vimF6.out<CR>
-autocmd Filetype c nnoremap <F7> :!egypt %.150r.expand \| dot -Tsvg -o ~/Dropbox/%.svg<CR>
+autocmd Filetype c nnoremap <F7> :!egypt %.150r.expand \| dot -Tsvg -o ~/Dropbox/egypt/%.svg<CR>
 " Check the memory leak of the programm 'a.out' under the current directory.
 autocmd Filetype c nnoremap <F8> :w<BAR>:!valgrind --leak-check=full ./a.out<CR>
 autocmd Filetype c nnoremap <F9> :make deploy<CR>
