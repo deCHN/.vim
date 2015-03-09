@@ -1,0 +1,24 @@
+snippet xnc:loop "A shell loop syntax"
+for file in *.c;
+do
+	cp $file ${file}.bkup;
+done
+endsnippet
+
+snippet xnc:loop_seq "Get sequence from backtick"
+for i in \`seq 0 5\`;
+do
+	./run_program > ${i}.out;
+done
+endsnippet
+
+snippet xnc:if "Shell if syntax"
+if test -e a_test_file;
+then
+	echo "test_file exist"
+else
+	echo "not exist"
+elif
+	echo "unknown"
+fi
+endsnippet
