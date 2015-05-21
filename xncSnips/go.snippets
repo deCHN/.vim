@@ -1,0 +1,54 @@
+snippet xnc:if "Simple if with initialization."
+if err := file.Chmod(0664); err != nil {
+	log.Print(err)
+}
+endsnippet
+
+snippet xnc:C "Simple C code reference."
+// #include <stdio.h>
+// #include <stdlib.h>
+import "C"
+import "unsafe"
+
+func Print(s string) {
+	cs := C.CString(s)
+	defer C.free(unsafe.Pointer(cs))
+	C.fputs(cs, (*C.FILE)(C.stdout))
+}
+endsnippet
+
+snippet xnc:switch "A simple go switch without judge statement."
+switch {
+	case: ${1:i} <
+	case: $1${2}
+	default: ${3}
+}
+${0}
+endsnippet
+
+
+snippet "xnc:switch var" "Switch the value of a variable."
+switch ${1:var name} {
+	case ${2:value1, value2, ...}: ${3}
+	case ${4}: ${5}
+	default: ${6}
+}
+${0}
+endsnippet
+
+snippet "xnc:switch init" "A switch with a initialization statement."
+switch ${1:i} := ${2}; {
+	case: $1${3}
+	case: $1${4}
+	default: ${5} 
+}
+${0}
+endsnippet
+
+snippet "xnc:defer log" "A defer function to log something after caller function returned."
+defer func() {
+	log.Printf("${1:func return}")
+}()
+${0}
+endsnippet
+
