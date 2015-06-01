@@ -42,7 +42,10 @@ language messages en_US.utf-8
 "noremap <C-]> <ESC>
 
 " The following command maps ',b' to display the buffer list and invoke the ':buffer' command. You can enter the desired buffer number and hit <Enter> to edit the buffer.
-nnoremap ,b :ls<CR>:buffer<Space> " Easy scrolling
+"nnoremap ,b :ls<CR>:buffer<Space>
+nnoremap ,b :ls<CR>:b<Space>
+
+" Easy scrolling
 nnoremap j jzz
 nnoremap k kzz
 nmap <C-J> jjjjjjjjjjjjjjj
@@ -96,8 +99,8 @@ vnorem // y/<c-r>"<cr>
 
 " Trigger configuration. Not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsSnippetDirectories=["xncSnips", "UltiSnips"]
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " Conflict with iomap <RIGHT>."
 let g:UltiSnipsExpandTrigger="<c-l>"
 "let g:UltiSnipsListSnippets="<c-m>"
@@ -110,9 +113,13 @@ let g:ycm_key_invoke_completion="<F11>"
 "let g:ycm_key_list_select_completion=["<TAB>", "<DOWN>"]
 "let g:ycm_key_list_previous_completion=["<S-TAB>", "<UP>"]
 
+nnoremap <F10> :TagbarToggle<CR>
+
 autocmd Filetype java nnoremap <F3> :JavaSearchContext<CR><ESC>
 
-autocmd Filetype go nnoremap <F6> :GoRun %<CR>
+autocmd Filetype go nnoremap <F3> :GoRun %<CR>
+autocmd Filetype go nnoremap <F4> :GoTest<CR>
+autocmd Filetype go nnoremap <F5> :!go test -v -cpuprofile=cpu.out -memprofile=mem.out<CR>
 
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
 autocmd Filetype c nnoremap <F2> :YcmDiags<CR><ESC>:q
@@ -123,10 +130,10 @@ autocmd Filetype c nnoremap <F5> :botright vertical wincmd f<CR><ESC>
 autocmd Filetype c nnoremap <F6> :w<BAR>:!gcc -fdump-rtl-expand % -o vimF6.out -g -Wall -O0 && ./vimF6.out<CR>
 autocmd Filetype c nnoremap <F7> :!egypt %.150r.expand \| dot -Tsvg -o ~/Dropbox/egypt/%.svg<CR>
 " Check the memory leak of the programm 'a.out' under the current directory.
-autocmd Filetype c nnoremap <F8> :w<BAR>:!valgrind --leak-check=full ./a.out<CR>
-autocmd Filetype c nnoremap <F9> :make deploy<CR>
+autocmd Filetype c nnoremap <F9> :w<BAR>:!valgrind --leak-check=full ./a.out<CR>
+"autocmd Filetype c nnoremap <F9> :make deploy<CR>
 
-noremap <F10> :se noscb<CR>:vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
+"noremap <F10> :se noscb<CR>:vs \| e %<CR>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjzz:se scb<CR><C-W><C-W>:se scb<CR>
 
 " Identify the syntax highlighting group used at the cursor.
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
