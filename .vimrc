@@ -50,14 +50,9 @@ nnoremap <Tab><Tab> :ls<CR>:b<Space>#
 " input <alt-j>: ctrl-v alt-j
 nnoremap j j
 nnoremap k k
-"nnoremap j jzz
-"nnoremap k kzz
 
 " Add newline without entering insert mode
 nnoremap <C-j> i<CR><Esc>
-
-"nnoremap <C-J> jjjjjjjzz
-"nnoremap <C-K> kkkkkkkzz
 
 " Automatically append closing characters
 " [http://vim.wikia.com/wiki/Automatically_append_closing_characters]
